@@ -6,10 +6,12 @@ module.exports = function (grunt) {
       compile: {
         options: {
           baseUrl: "./",
-          mainConfigFile: "./config.js",
-          name: "main",
+          mainConfigFile: "config.js",
+          out: "build/out.js",
+          findNestedDependencies: true,
+          name: "js/main",
+          optimize: 'none'
           //include: ["jquery.min", "jquery-ui.min", "../src/jquery.multiselect"],
-          out: "./out.js",
         },
       },
     },

@@ -1,8 +1,8 @@
 require.config({
   paths: {
-    jquery: "./jquery.min",
-    jqueryUI: "./jquery-ui.min",
-    multiselect: "./jquery.multiselect",
+    jquery: "js/libs/jquery.min",
+    jqueryUI: "js/libs/jquery-ui.min",
+    multiselect: "js/libs/jquery.multiselect",
   },
   shim: {
     multiselect: {
@@ -11,3 +11,5 @@ require.config({
     },
   },
 });
+
+require(["js/main"]); 
