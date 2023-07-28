@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "grunt": "^1.6.1",
-    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-contrib-requirejs": "^1.0.0"
+  },
+  "devDependencies": {
     "grunt-contrib-uglify": "^5.2.2"
   }
 }
