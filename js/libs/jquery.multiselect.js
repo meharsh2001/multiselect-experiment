@@ -16,7 +16,12 @@
  *   http://www.gnu.org/licenses/gpl.html
  *
  */
-(function ($, undefined) {
+!(function (t) {
+  "use strict";
+  "function" == typeof define && define.amd
+    ? define(["jquery", "jqueryUI"], t)
+    : t(jQuery);
+})(function ($) {
   // Counter used to prevent collisions
   var multiselectID = 0;
 
@@ -2228,4 +2233,4 @@
       },
     });
   }
-})(jQuery);
+});
