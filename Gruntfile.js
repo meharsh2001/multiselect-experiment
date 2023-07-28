@@ -15,6 +15,13 @@ module.exports = function (grunt) {
         },
       },
     },
+    uglify: {
+      compile: {
+        files: {
+          "build/out.js": ["build/out.js"],
+        },
+      },
+    },
   });
 
   // Load the plugin that provides the "uglify" task.
@@ -23,6 +30,6 @@ module.exports = function (grunt) {
 
   // Default task(s).
   grunt.registerTask("default", ["requirejs"], function (mode) {
-    grunt.task.run(["requirejs:compile"]);
+    grunt.task.run(["requirejs:compile", "uglify"]);
   });
 };
