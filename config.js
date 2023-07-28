@@ -12,4 +12,4 @@ require.config({
   },
 });
 
-require(["js/main"]); 
+require(["js/main"]);

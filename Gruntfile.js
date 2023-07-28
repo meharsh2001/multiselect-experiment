@@ -10,7 +10,7 @@ module.exports = function (grunt) {
           out: "build/out.js",
           findNestedDependencies: true,
           name: "js/main",
-          optimize: 'none'
+          optimize: "none",
           //include: ["jquery.min", "jquery-ui.min", "../src/jquery.multiselect"],
         },
       },
