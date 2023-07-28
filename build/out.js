@@ -40,6 +40,7 @@
   // throw exceptions when non-strict code (e.g., ASP.NET 4.5) accesses strict mode
   // arguments.callee.caller (trac-13335). But as of jQuery 3.0 (2016), strict mode should be common
   // enough that all such attempts are guarded in a try block.
+  "use strict";
 
   var arr = [];
 
@@ -11170,6 +11171,7 @@
 
   return jQuery;
 });
+
 /*! jQuery UI - v1.13.2 - 2022-07-14
  * http://jqueryui.com
  * Includes: widget.js, position.js, data.js, disable-selection.js, effect.js, effects/effect-blind.js, effects/effect-bounce.js, effects/effect-clip.js, effects/effect-drop.js, effects/effect-explode.js, effects/effect-fade.js, effects/effect-fold.js, effects/effect-highlight.js, effects/effect-puff.js, effects/effect-pulsate.js, effects/effect-scale.js, effects/effect-shake.js, effects/effect-size.js, effects/effect-slide.js, effects/effect-transfer.js, focusable.js, form-reset-mixin.js, jquery-patch.js, keycode.js, labels.js, scroll-parent.js, tabbable.js, unique-id.js, widgets/accordion.js, widgets/autocomplete.js, widgets/button.js, widgets/checkboxradio.js, widgets/controlgroup.js, widgets/datepicker.js, widgets/dialog.js, widgets/draggable.js, widgets/droppable.js, widgets/menu.js, widgets/mouse.js, widgets/progressbar.js, widgets/resizable.js, widgets/selectable.js, widgets/selectmenu.js, widgets/slider.js, widgets/sortable.js, widgets/spinner.js, widgets/tabs.js, widgets/tooltip.js
@@ -11177,9 +11179,7 @@
 
 !(function (t) {
   "use strict";
-  "function" == typeof define && define.amd
-    ? define("jqueryUI", ["jquery"], t)
-    : t(jQuery);
+  "function" == typeof define && define.amd ? define('jqueryUI',["jquery"], t) : t(jQuery);
 })(function (V) {
   "use strict";
   V.ui = V.ui || {};
@@ -23672,6 +23672,7 @@
       });
   V.ui.tooltip;
 });
+
 /* jshint forin:true, noarg:true, noempty:true, eqeqeq:true, boss:true, undef:true, curly:true, browser:true, jquery:true */
 /*
  * jQuery UI MultiSelect Widget 3.0.0
@@ -23690,7 +23691,10 @@
  *   http://www.gnu.org/licenses/gpl.html
  *
  */
-(function ($, undefined) {
+!(function (t) {
+  "use strict";
+  "function" == typeof define && define.amd ? define('multiselect',["jquery", "jqueryUI"], t) : t(jQuery);
+})(function($) {
   // Counter used to prevent collisions
   var multiselectID = 0;
 
@@ -25902,17 +25906,12 @@
       },
     });
   }
-})(jQuery);
-
-define("multiselect", ["jquery", "jqueryUI"], (function (global) {
-  return function () {
-    var ret, fn;
-    return ret || global.multiselect;
-  };
-})(this));
+});
 
 require(["jquery", "jqueryUI", "multiselect"], function () {
+  $('select').multiselect();
   console.log("loaded!");
 });
 
-define("js/main", function () {});
+define("js/main", function(){});
+
